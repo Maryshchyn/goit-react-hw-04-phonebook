@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import Form from './Form/Form'
+import {Form} from './Form/Form'
 import {FormList} from './FormList/FormList'
 import { nanoid } from 'nanoid';
 import { Title } from './Title/Title';
