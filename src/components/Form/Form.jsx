@@ -3,6 +3,8 @@ import {TitleForm, TitleLabel, TitleInput, TitleButton} from './Form.styled'
 const { Component } = require("react");
 
 
+
+
 class Form extends Component {
     state = {
         name: '',
