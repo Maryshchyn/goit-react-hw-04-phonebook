@@ -39,27 +39,22 @@ export function App() {
     }
    addForm(name, number);
   };
-  //   formSubmitHandler = data => {
-//     const { name, number } = data;
-//     const normalizedName = name.toLowerCase();
-//     if (this.findContactByName(normalizedName)) {
-//       alert (`${name} is already in contacts`);
-//       return;
-//     }
-//     this.addForm(name, number);
-//   };
+ 
   const changeFilter = e => {
     setFilter( e.currentTarget.value );
   };
 
-  const deleteForm = (constactId) => {
+//   console.log(constactId)
+// console.log(contacts)
+  const deleteForm = constactId => {
+    setContacts(contacts.filter(({id}) => id !== constactId))
     
-    setContacts(prefState => ({
-      contacts: prefState.contacts.filter(contact => contact.id !== constactId)
-      console.log(contact)
-    }))
+      
+      
     
+  
   }
+  
   const normalizeFilter = filter.toLowerCase();
   const vaisibleContacts = contacts.filter(contact =>
       contact.name.toLowerCase().includes(normalizeFilter))
