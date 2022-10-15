@@ -44,16 +44,10 @@ export function App() {
     setFilter( e.currentTarget.value );
   };
 
-//   console.log(constactId)
-// console.log(contacts)
+
   const deleteForm = constactId => {
     setContacts(contacts.filter(({id}) => id !== constactId))
-    
-      
-      
-    
-  
-  }
+    }
   
   const normalizeFilter = filter.toLowerCase();
   const vaisibleContacts = contacts.filter(contact =>
