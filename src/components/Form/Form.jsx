@@ -9,24 +9,27 @@ export function Form({onSubmit}) {
 const hendlerOnSubmit = e => {
     e.preventDefault();
       
-      onSubmit(name, number)        
+      onSubmit({name, number})        
       setName('');
       setNumber('')
   }
   const hendleChange = e => {
-    const {input} = e.currentTarget
-    setName( e.target.value.name);
-    // setNumber(value.number)
-    // console.log(e.target.value)
-    setNumber(e.target.value.number)
-  };
-  // hendleChange = e => {
-    // const { name, value } = e.currentTarget
-    // this.setState({
-      // [name]: value
-    // })
-    // };
+    console.log(e.target.name)
 
+    const { name, value } = e.target;
+
+    switch (name) {
+      case 'name':
+        setName(value);
+        break;
+      case 'number':
+        setNumber(value);
+        break;
+      default:
+        break;
+    }
+
+  };
 
    return (
              <TitleForm onSubmit={hendlerOnSubmit}>

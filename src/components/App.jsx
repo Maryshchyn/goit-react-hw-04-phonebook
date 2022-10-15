@@ -9,7 +9,7 @@ import { Filter } from './Filter/Filter'
 export function App() {
   const [filter, setFilter] = useState('');
   const [contacts, setContacts] = useState(() => {
-   return JSON.parse(localStorage.getItem('contacts')) ?? ''
+    return JSON.parse(localStorage.getItem('contacts')) ?? [];
   });
 
   useEffect(() => {
@@ -37,16 +37,28 @@ export function App() {
       alert (`${name} is already in contacts`);
       return;
     }
-    addForm(name, number);
+   addForm(name, number);
   };
+  //   formSubmitHandler = data => {
+//     const { name, number } = data;
+//     const normalizedName = name.toLowerCase();
+//     if (this.findContactByName(normalizedName)) {
+//       alert (`${name} is already in contacts`);
+//       return;
+//     }
+//     this.addForm(name, number);
+//   };
   const changeFilter = e => {
     setFilter( e.currentTarget.value );
   };
 
-  const  deleteForm = (constactId) =>{
+  const deleteForm = (constactId) => {
+    
     setContacts(prefState => ({
       contacts: prefState.contacts.filter(contact => contact.id !== constactId)
+      console.log(contact)
     }))
+    
   }
   const normalizeFilter = filter.toLowerCase();
   const vaisibleContacts = contacts.filter(contact =>
