@@ -31,33 +31,32 @@ const hendlerOnSubmit = e => {
 
   };
 
-   return (
-             <TitleForm onSubmit={hendlerOnSubmit}>
-        <TitleLabel>
-          Name
-     <TitleInput
-        type="text"
-        name="name"
-        value={name}
-        onChange={hendleChange}
-        pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-        title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-        required
-          /></TitleLabel>
-        <TitleLabel>
-          Number
+  return (
+    <TitleForm onSubmit={hendlerOnSubmit}>
+      <TitleLabel>
+        Name
+        <TitleInput
+          type="text"
+          name="name"
+          value={name}
+          onChange={hendleChange}
+          pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+          title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+          required />
+      </TitleLabel>
+      <TitleLabel>
+        Number
       <TitleInput
-        type="tel"
-            name="number"
-            value={number}
-        onChange={hendleChange}
-        pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-        title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
-        required
-          />
-        </TitleLabel>
-        <TitleButton type='submit'>Add contact</TitleButton>
-      </TitleForm>
+          type="tel"
+          name="number"
+          value={number}
+          onChange={hendleChange}
+          pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+          title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+          required/>
+      </TitleLabel>
+      <TitleButton type='submit'>Add contact</TitleButton>
+    </TitleForm>
         )
 }
 
